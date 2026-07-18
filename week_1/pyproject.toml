@@ -14,4 +14,5 @@ dependencies = [
 members = [
     "day_3",
     "day_4",
+    "Resume_Project",
 ]
