@@ -5,6 +5,7 @@ requires-python = ">=3.11"
 [manifest]
 members = [
     "day-3",
+    "day-4",
     "week-1",
 ]
 
@@ -49,6 +50,25 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [{ name = "groq", specifier = ">=1.5.0" }]
+
+[[package]]
+name = "day-4"
+version = "0.1.0"
+source = { virtual = "day_4" }
+dependencies = [
+    { name = "dotenv" },
+    { name = "groq" },
+    { name = "pydantic" },
+    { name = "python-dotenv" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "dotenv", specifier = ">=0.9.9" },
+    { name = "groq", specifier = ">=1.5.0" },
+    { name = "pydantic", specifier = ">=2.13.4" },
+    { name = "python-dotenv", specifier = ">=1.2.2" },
+]
 
 [[package]]
 name = "distro"

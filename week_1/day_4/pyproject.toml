@@ -1,5 +1,5 @@
 [project]
-name = "week-1"
+name = "day-4"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -7,11 +7,6 @@ requires-python = ">=3.11"
 dependencies = [
     "dotenv>=0.9.9",
     "groq>=1.5.0",
+    "pydantic>=2.13.4",
     "python-dotenv>=1.2.2",
-]
-
-[tool.uv.workspace]
-members = [
-    "day_3",
-    "day_4",
 ]
