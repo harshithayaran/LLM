@@ -93,21 +93,22 @@ json_jobD = answer
 
 # Structuring resumes
 class Result(BaseModel):
+  candidate_name: str
   score : float
   description : dict
 
 class Experience(BaseModel):
-  company : str
-  role : str
-  duration : str
-  skills : list[str]
-  description : str
+  company : str| None = None
+  role : str| None = None
+  duration : str| None = None
+  skills : list[str] = []
+  description : str| None = None
 
 class Resume(BaseModel):
-  name : str
-  email : str
-  mobile : str
-  exp : float
+  name : str| None = None
+  email : str| None = None
+  mobile : str| None = None
+  exp : float| None = None
   education : list[str]
   projects : list[str]
   certification : list[str]
@@ -221,11 +222,11 @@ for resume in all_resume.iterdir():
   job = jobDscrptn(**json.loads(json_jobD))
   resume_text = readFile(resume)
   parse_resume = parsed_resume(resume_text)
-  result = fetchFinalScore(job, resume_text)
+  result = fetchFinalScore(job, parse_resume)
   all_results.append({
-    "name" : result.name,
+    "name" : result.candidate_name,
     "score" : result.score,
-    "details" : result.details
+    "details" : result.description
   })
   all_results.sort(
     key=lambda candidate : candidate["score"],
