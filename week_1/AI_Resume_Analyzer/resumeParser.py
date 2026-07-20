@@ -228,27 +228,27 @@ for resume in all_resume.iterdir():
     "score" : result.score,
     "details" : result.description
   })
-  all_results.sort(
-    key=lambda candidate : candidate["score"],
-    reverse = True
+all_results.sort(
+  key=lambda candidate : candidate["score"],
+  reverse = True
+)
+top2 = all_results[: 2]
+bottom2 = all_results[-2 :]
+print("TOP 2 CANDIDATES")
+for candidate in top2:
+  print(
+    candidate["name"],
+    "-",
+    candidate["score"],
+    "%"
   )
-  top2 = all_results[: 2]
-  bottom2 = all_results[-2 :]
-  print("TOP 2 CANDIDATES")
-  for candidate in top2:
-    print(
-      candidate["name"],
-      "-",
-      candidate["score"],
-      "%"
-    )
+print(candidate["details"])
+print("LOWEST 2 CANDIDATES")
+for candidate in bottom2:
+  print(
+    candidate["name"],
+    "-",
+    candidate["score"],
+    "%"
+  )
   print(candidate["details"])
-  print("LOWEST 2 CANDIDATES")
-  for candidate in bottom2:
-    print(
-      candidate["name"],
-      "-",
-      candidate["score"],
-      "%"
-    )
-    print(candidate["details"])
